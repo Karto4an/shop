@@ -1,8 +1,11 @@
 import telebot
-import config
 from telebot import types
+from dotenv import load_dotenv
 
-bot = telebot.TeleBot(config.TOKEN)
+load_dotenv()
+tokentlg = os.getenv('TOKEN')
+
+bot = telebot.TeleBot(tokentlg)
 
 welcome_keyboard = types.ReplyKeyboardMarkup(resize_keyboard = True)
 welcome_keyboard_btn_1 = types.KeyboardButton("Windows")
