@@ -34,6 +34,8 @@ def choise(message):
 			bot.send_message(message.chat.id, "Chose version", reply_markup = windows_versionselect_keyboard)
 		elif message.text == "Office":
 			bot.send_message(message.chat.id, "Chose subscribtion type", reply_markup = office_versionselect_keyboard)
+		else:
+			bot.send_message(message.chat.id, "idk what to say...")
 	print(message.text)
 
 @bot.callback_query_handler(func = lambda call: True)
