@@ -3,6 +3,7 @@ import telebot
 import price
 from telebot import types
 from dotenv import load_dotenv
+from aiogram.types.message import ContentType
 
 load_dotenv()
 tokentlg = os.getenv("TOKEN")
