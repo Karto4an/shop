@@ -1,7 +1,6 @@
 import os
 import telebot
-#import price
-import names_and_messages
+import price
 from telebot import types
 from dotenv import load_dotenv
 from aiogram.types.message import ContentType
@@ -11,6 +10,21 @@ tokentlg = os.getenv("TOKEN")
 provider_payment_token = os.getenv("PAY_TOKEN")
 
 bot = telebot.TeleBot(tokentlg)
+
+#SETUP BLOCK
+
+name_keyboard_choise_1 = "windows"
+name_keyboard_choise_2 = "office"
+name_inlinekeyboard_versionchoise_1 = "Home"
+name_inlinekeyboard_versionchoise_2 = "Profesional"
+name_inlinekeyboard_callback_1 = "windows_home"
+name_inlinekeyboard_callback_2 = "windows_pro"
+name_inlinekeyboard_versionchoise_3 = "Home"
+name_inlinekeyboard_versionchoise_4 = "Profesional"
+name_inlinekeyboard_callback_3 = "office_home"
+name_inlinekeyboard_callback_4 = "invoice_officepro"
+
+#--------------------------------------------------------------
 
 welcome_keyboard = types.ReplyKeyboardMarkup(resize_keyboard = True)
 welcome_keyboard_btn_1 = types.KeyboardButton(name_keyboard_choise_2)
