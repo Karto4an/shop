@@ -95,7 +95,7 @@ def callback_InlineKeyboard(call):
 				photo_width = 600,
 				photo_size =750,
 				is_flexible = False,
-				prices = [price_4],
+				prices = [price_1],
 				start_parameter = "time-machine-example",
 				invoice_payload = 1)
 		elif call.data == name_inlinekeyboard_callback_2:
@@ -110,7 +110,7 @@ def callback_InlineKeyboard(call):
 				photo_width = 600,
 				photo_size =750,
 				is_flexible = False,
-				prices = [price_4],
+				prices = [price_2],
 				start_parameter = "time-machine-example",
 				invoice_payload = 1)
 		elif call.data == name_inlinekeyboard_callback_3:
@@ -125,7 +125,7 @@ def callback_InlineKeyboard(call):
 				photo_width = 600,
 				photo_size =750,
 				is_flexible = False,
-				prices = [price_4],
+				prices = [price_3],
 				start_parameter = "time-machine-example",
 				invoice_payload = 1)
 		elif call.data == name_inlinekeyboard_callback_4:
