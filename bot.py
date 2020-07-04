@@ -71,4 +71,12 @@ def callback_InlineKeyboard(call):
 	except Exception as e:
 		print(repr(e))
 
+@bot.pre_checkout_query_handler(func=lambda query: True)
+async def process_pre_checkout_query(pre_checkout_query: types.PreCheckoutQuery):
+	await bot.answer_pre_checkout_query(pre_checkout_query.id, ok=True)
+	await bot.send_message(
+		message.chat.id,
+		"Succesful payment!")
+	
+
 bot.polling(none_stop = True)
