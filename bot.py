@@ -55,9 +55,9 @@ def callback_InlineKeyboard(call):
 			bot.send_message(call.message.chat.id, "Pro")
 		elif call.data == "send_invoice_1":
 			bot.send_invoice(
-				message.chat.id,
-				title = MESSAGES["tm_title"],
-				description = MESSAGES["tm_description"],
+				call.message.chat.id,
+				title = "tm_title",
+				description = "tm_description",
 				provider_token = provider_payment_token,
 				currency = "uah",
 				photo_url = "photo.jfif",
@@ -67,7 +67,7 @@ def callback_InlineKeyboard(call):
 				is_flexible = False,
 				prices = [price_1],
 				start_parameter = 'time-machine-example',
-				payload = '1')
+				invoice_payload = 1)
 	except Exception as e:
 		print(repr(e))
 
