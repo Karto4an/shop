@@ -1,6 +1,6 @@
 import os
 import telebot
-import price
+#import price
 import names_and_messages
 from telebot import types
 from dotenv import load_dotenv
