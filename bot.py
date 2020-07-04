@@ -74,7 +74,7 @@ def callback_InlineKeyboard(call):
 @bot.pre_checkout_query_handler(func=lambda query: True)
 def process_pre_checkout_query(pre_checkout_query: types.PreCheckoutQuery):
 	bot.answer_pre_checkout_query(pre_checkout_query.id, ok=True)
-	bot.send_message(
+	query.bot.send_message(
 		message.chat.id,
 		"Succesful payment!")
 	
