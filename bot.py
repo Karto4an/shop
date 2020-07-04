@@ -54,7 +54,7 @@ def callback_InlineKeyboard(call):
 		elif call.data == "office_pro":
 			bot.send_message(call.message.chat.id, "Pro")
 		elif call.data == "send_invoice_1":
-			await bot.send_invoice(
+			bot.send_invoice(
 				message.chat.id,
 				title = MESSAGES["tm_title"],
 				description = MESSAGES["tm_description"],
