@@ -1,10 +1,12 @@
 import os
 import telebot
+import price
 from telebot import types
 from dotenv import load_dotenv
 
 load_dotenv()
-tokentlg = os.getenv('TOKEN')
+tokentlg = os.getenv("TOKEN")
+provider_payment_token = os.getenv("PAY_TOKEN")
 
 bot = telebot.TeleBot(tokentlg)
 
@@ -20,8 +22,10 @@ windows_versionselect_keyboard.add(windows_versionselect_keyboard_home, windows_
 
 office_versionselect_keyboard = types.InlineKeyboardMarkup()
 office_versionselect_keyboard_home = types.InlineKeyboardButton("Home", callback_data = "office_home")
-office_versionselect_keyboard_pro = types.InlineKeyboardButton("Profesional", callback_data = "office_pro")
+office_versionselect_keyboard_pro = types.InlineKeyboardButton("Profesional", callback_data = "send_invoice_1")
 office_versionselect_keyboard.add(office_versionselect_keyboard_home, office_versionselect_keyboard_pro)
+
+price_1 = types.LabeledPrice(label='Настоящая Машина Времени', amount=4200000)
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
@@ -49,6 +53,21 @@ def callback_InlineKeyboard(call):
 			bot.send_message(call.message.chat.id, "Home")
 		elif call.data == "office_pro":
 			bot.send_message(call.message.chat.id, "Pro")
+		elif call.data == "send_invoice_1":
+			await bot.send_invoice(
+				message.chat.id,
+				title = MESSAGES["tm_title"],
+				description = MESSAGES["tm_description"],
+				provider_token = provider_payment_token,
+				currency = "uah",
+				photo_url = "photo.jfif",
+				photo_height = 800,
+				photo_width = 600,
+				photo_size =750,
+				is_flexible = False,
+				prices = [price_1],
+				start_parameter = 'time-machine-example',
+				payload = '1')
 	except Exception as e:
 		print(repr(e))
 
