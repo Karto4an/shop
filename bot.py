@@ -27,25 +27,25 @@ price_1_title = "Microsoft Windows 10 Home"
 price_1_description = "Version of Windows 10 for home usage"
 price_1_currency = "uah"
 
-price_1 = types.LabeledPrice(label = "MS Windows Home", amount = 100)
+price_1 = types.LabeledPrice(label = "MS Windows Home", amount = 10000)
 
 price_2_title = "Microsoft Windows 10 Profesional"
 price_2_description = "Version of Windows 10 for profesional usage"
 price_2_currency = "uah"
 
-price_2 = types.LabeledPrice(label = "MS Windows Pro", amount = 140)
+price_2 = types.LabeledPrice(label = "MS Windows Pro", amount = 14000)
 
 price_3_title = "Microsoft Office Home"
 price_3_description = "Version of MS Office for home usage"
 price_3_currency = "uah"
 
-price_3 = types.LabeledPrice(label = "MS Office Home", amount = 80)
+price_3 = types.LabeledPrice(label = "MS Office Home", amount = 8000)
 
 price_4_title = "Microsoft Office Profesional"
 price_4_description = "Version of MS Office for profesional usage"
 price_4_currency = "uah"
 
-price_4 = types.LabeledPrice(label = "MS Office Pro", amount = 120)
+price_4 = types.LabeledPrice(label = "MS Office Pro", amount = 12000)
 #--------------------------------------------------------------
 
 welcome_keyboard = types.ReplyKeyboardMarkup(resize_keyboard = True)
