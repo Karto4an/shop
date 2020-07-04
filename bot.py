@@ -1,6 +1,7 @@
 import os
 import telebot
 import price
+import names_and_messages
 from telebot import types
 from dotenv import load_dotenv
 from aiogram.types.message import ContentType
@@ -12,18 +13,18 @@ provider_payment_token = os.getenv("PAY_TOKEN")
 bot = telebot.TeleBot(tokentlg)
 
 welcome_keyboard = types.ReplyKeyboardMarkup(resize_keyboard = True)
-welcome_keyboard_btn_1 = types.KeyboardButton("Windows")
-welcome_keyboard_btn_2 = types.KeyboardButton("Office")
+welcome_keyboard_btn_1 = types.KeyboardButton(name_keyboard_choise_2)
+welcome_keyboard_btn_2 = types.KeyboardButton(name_keyboard_choise_2)
 welcome_keyboard.add(welcome_keyboard_btn_1, welcome_keyboard_btn_2)
 
 windows_versionselect_keyboard = types.InlineKeyboardMarkup()
-windows_versionselect_keyboard_home = types.InlineKeyboardButton("Home", callback_data = "windows_home")
-windows_versionselect_keyboard_pro = types.InlineKeyboardButton("Profesional", callback_data = "windows_pro")
+windows_versionselect_keyboard_home = types.InlineKeyboardButton(name_inlinekeyboard_versionchoise_1, callback_data = name_inlinekeyboard_callback_1)
+windows_versionselect_keyboard_pro = types.InlineKeyboardButton(name_inlinekeyboard_versionchoise_2, callback_data = name_inlinekeyboard_callback_2)
 windows_versionselect_keyboard.add(windows_versionselect_keyboard_home, windows_versionselect_keyboard_pro)
 
 office_versionselect_keyboard = types.InlineKeyboardMarkup()
-office_versionselect_keyboard_home = types.InlineKeyboardButton("Home", callback_data = "office_home")
-office_versionselect_keyboard_pro = types.InlineKeyboardButton("Profesional", callback_data = "send_invoice_1")
+office_versionselect_keyboard_home = types.InlineKeyboardButton(name_inlinekeyboard_versionchoise_3, callback_data = name_inlinekeyboard_callback_3)
+office_versionselect_keyboard_pro = types.InlineKeyboardButton(name_inlinekeyboard_versionchoise_4, callback_data = name_inlinekeyboard_callback_4)
 office_versionselect_keyboard.add(office_versionselect_keyboard_home, office_versionselect_keyboard_pro)
 
 price_1 = types.LabeledPrice(label='Настоящая Машина Времени', amount=4200000)
@@ -54,7 +55,7 @@ def callback_InlineKeyboard(call):
 			bot.send_message(call.message.chat.id, "Home")
 		elif call.data == "office_pro":
 			bot.send_message(call.message.chat.id, "Pro")
-		elif call.data == "send_invoice_1":
+		elif call.data == "invoice_officepro":
 			bot.send_invoice(
 				call.message.chat.id,
 				title = "tm_title",
