@@ -68,12 +68,13 @@ def callback_InlineKeyboard(call):
 				prices = [price_1],
 				start_parameter = 'time-machine-example',
 				invoice_payload = 1)
+		elif call.data == "succesful_payment":
+			bot.send_message(call.message.chat.id, "Succesful payment!")
 	except Exception as e:
 		print(repr(e))
 
 @bot.pre_checkout_query_handler(func=lambda query: True)
-def process_pre_checkout_query(message, pre_checkout_query: types.PreCheckoutQuery):
-	bot.answer_pre_checkout_query(pre_checkout_query.id, ok=True)
-	bot.send_message(message.chat.id, "Succesful payment!")
-	
+def process_pre_checkout_query(pre_checkout_query: types.PreCheckoutQuery):
+	bot.answer_pre_checkout_query(pre_checkout_query.id, ok=True, callback_data = "succesful_payment")
+
 bot.polling(none_stop = True)
