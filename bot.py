@@ -49,7 +49,7 @@ price_4 = types.LabeledPrice(label = "MS Office Pro", amount = 12000)
 #--------------------------------------------------------------
 
 welcome_keyboard = types.ReplyKeyboardMarkup(resize_keyboard = True)
-welcome_keyboard_btn_1 = types.KeyboardButton(name_keyboard_choise_2)
+welcome_keyboard_btn_1 = types.KeyboardButton(name_keyboard_choise_1)
 welcome_keyboard_btn_2 = types.KeyboardButton(name_keyboard_choise_2)
 welcome_keyboard.add(welcome_keyboard_btn_1, welcome_keyboard_btn_2)
 
