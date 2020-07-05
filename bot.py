@@ -12,8 +12,8 @@ bot = telebot.TeleBot(tokentlg)
 
 #SETUP BLOCK
 
-name_keyboard_choise_1 = "windows"
-name_keyboard_choise_2 = "office"
+name_keyboard_choise_1 = "Windows"
+name_keyboard_choise_2 = "Office"
 name_inlinekeyboard_versionchoise_1 = "Home"
 name_inlinekeyboard_versionchoise_2 = "Profesional"
 name_inlinekeyboard_callback_1 = "invoice_windowshome"
