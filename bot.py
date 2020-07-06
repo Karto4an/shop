@@ -12,40 +12,40 @@ bot = telebot.TeleBot(tokentlg)
 
 #SETUP BLOCK
 
-name_keyboard_choise_1 = "Windows"
-name_keyboard_choise_2 = "Office"
-name_inlinekeyboard_versionchoise_1 = "Home"
-name_inlinekeyboard_versionchoise_2 = "Profesional"
+name_keyboard_choise_1 = "1st category"
+name_keyboard_choise_2 = "2nd category"
+name_inlinekeyboard_versionchoise_1 = "Toys"
+name_inlinekeyboard_versionchoise_2 = "Sculptures"
 name_inlinekeyboard_callback_1 = "invoice_windowshome"
 name_inlinekeyboard_callback_2 = "invoice_windowspro"
-name_inlinekeyboard_versionchoise_3 = "Home"
-name_inlinekeyboard_versionchoise_4 = "Profesional"
+name_inlinekeyboard_versionchoise_3 = "Arts"
+name_inlinekeyboard_versionchoise_4 = "All for art"
 name_inlinekeyboard_callback_3 = "invoice_officehome"
 name_inlinekeyboard_callback_4 = "invoice_officepro"
 
-price_1_title = "Microsoft Windows 10 Home"
-price_1_description = "Version of Windows 10 for home usage"
+price_1_title = "Toy"
+price_1_description = "Toy"
 price_1_currency = "uah"
 
-price_1 = types.LabeledPrice(label = "MS Windows Home", amount = 10000)
+price_1 = types.LabeledPrice(label = "Toy", amount = 10000)
 
-price_2_title = "Microsoft Windows 10 Profesional"
-price_2_description = "Version of Windows 10 for profesional usage"
+price_2_title = "Sculpture"
+price_2_description = "Sculpture"
 price_2_currency = "uah"
 
-price_2 = types.LabeledPrice(label = "MS Windows Pro", amount = 14000)
+price_2 = types.LabeledPrice(label = "Sculpture", amount = 14000)
 
-price_3_title = "Microsoft Office Home"
-price_3_description = "Version of MS Office for home usage"
+price_3_title = "Painting"
+price_3_description = "Painting"
 price_3_currency = "uah"
 
-price_3 = types.LabeledPrice(label = "MS Office Home", amount = 8000)
+price_3 = types.LabeledPrice(label = "Painting", amount = 8000)
 
-price_4_title = "Microsoft Office Profesional"
-price_4_description = "Version of MS Office for profesional usage"
+price_4_title = "Goods for art"
+price_4_description = "Goods for art"
 price_4_currency = "uah"
 
-price_4 = types.LabeledPrice(label = "MS Office Pro", amount = 12000)
+price_4 = types.LabeledPrice(label = "Goods for art", amount = 12000)
 #--------------------------------------------------------------
 
 welcome_keyboard = types.ReplyKeyboardMarkup(resize_keyboard = True)
